@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/evokes_labs/static/css/main.718b1628.css",
+    "main.js": "/evokes_labs/static/js/main.b5c1359b.js",
+    "static/js/453.eac07eb5.chunk.js": "/evokes_labs/static/js/453.eac07eb5.chunk.js",
+    "static/media/logo.svg": "/evokes_labs/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/evokes_labs/index.html",
+    "main.718b1628.css.map": "/evokes_labs/static/css/main.718b1628.css.map",
+    "main.b5c1359b.js.map": "/evokes_labs/static/js/main.b5c1359b.js.map",
+    "453.eac07eb5.chunk.js.map": "/evokes_labs/static/js/453.eac07eb5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.718b1628.css",
+    "static/js/main.b5c1359b.js"
+  ]
+}
