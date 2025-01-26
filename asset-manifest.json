@@ -1,31 +1,15 @@
 {
   "files": {
-    "main.css": "/evokes_labs/static/css/main.95ed42f5.css",
-    "main.js": "/evokes_labs/static/js/main.65674cb2.js",
-    "static/js/208.393fa48d.chunk.js": "/evokes_labs/static/js/208.393fa48d.chunk.js",
-    "static/js/293.1603b528.chunk.js": "/evokes_labs/static/js/293.1603b528.chunk.js",
-    "static/js/917.ec273f1b.chunk.js": "/evokes_labs/static/js/917.ec273f1b.chunk.js",
-    "static/js/516.64b62b11.chunk.js": "/evokes_labs/static/js/516.64b62b11.chunk.js",
-    "static/js/519.04a8d3ce.chunk.js": "/evokes_labs/static/js/519.04a8d3ce.chunk.js",
-    "static/js/946.10c7456d.chunk.js": "/evokes_labs/static/js/946.10c7456d.chunk.js",
-    "static/js/160.456fe3ab.chunk.js": "/evokes_labs/static/js/160.456fe3ab.chunk.js",
-    "static/js/23.8cb66063.chunk.js": "/evokes_labs/static/js/23.8cb66063.chunk.js",
+    "main.css": "/evokes_labs/static/css/main.51f1c5bc.css",
+    "main.js": "/evokes_labs/static/js/main.17db19b0.js",
     "static/js/453.eac07eb5.chunk.js": "/evokes_labs/static/js/453.eac07eb5.chunk.js",
     "index.html": "/evokes_labs/index.html",
-    "main.95ed42f5.css.map": "/evokes_labs/static/css/main.95ed42f5.css.map",
-    "main.65674cb2.js.map": "/evokes_labs/static/js/main.65674cb2.js.map",
-    "208.393fa48d.chunk.js.map": "/evokes_labs/static/js/208.393fa48d.chunk.js.map",
-    "293.1603b528.chunk.js.map": "/evokes_labs/static/js/293.1603b528.chunk.js.map",
-    "917.ec273f1b.chunk.js.map": "/evokes_labs/static/js/917.ec273f1b.chunk.js.map",
-    "516.64b62b11.chunk.js.map": "/evokes_labs/static/js/516.64b62b11.chunk.js.map",
-    "519.04a8d3ce.chunk.js.map": "/evokes_labs/static/js/519.04a8d3ce.chunk.js.map",
-    "946.10c7456d.chunk.js.map": "/evokes_labs/static/js/946.10c7456d.chunk.js.map",
-    "160.456fe3ab.chunk.js.map": "/evokes_labs/static/js/160.456fe3ab.chunk.js.map",
-    "23.8cb66063.chunk.js.map": "/evokes_labs/static/js/23.8cb66063.chunk.js.map",
+    "main.51f1c5bc.css.map": "/evokes_labs/static/css/main.51f1c5bc.css.map",
+    "main.17db19b0.js.map": "/evokes_labs/static/js/main.17db19b0.js.map",
     "453.eac07eb5.chunk.js.map": "/evokes_labs/static/js/453.eac07eb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.95ed42f5.css",
-    "static/js/main.65674cb2.js"
+    "static/css/main.51f1c5bc.css",
+    "static/js/main.17db19b0.js"
   ]
 }
