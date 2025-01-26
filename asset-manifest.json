@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/evokes_labs/static/css/main.17e0f073.css",
-    "main.js": "/evokes_labs/static/js/main.bde3d1b8.js",
+    "main.css": "/evokes_labs/static/css/main.92512f16.css",
+    "main.js": "/evokes_labs/static/js/main.eb4d0783.js",
     "static/js/453.eac07eb5.chunk.js": "/evokes_labs/static/js/453.eac07eb5.chunk.js",
     "index.html": "/evokes_labs/index.html",
-    "main.17e0f073.css.map": "/evokes_labs/static/css/main.17e0f073.css.map",
-    "main.bde3d1b8.js.map": "/evokes_labs/static/js/main.bde3d1b8.js.map",
+    "main.92512f16.css.map": "/evokes_labs/static/css/main.92512f16.css.map",
+    "main.eb4d0783.js.map": "/evokes_labs/static/js/main.eb4d0783.js.map",
     "453.eac07eb5.chunk.js.map": "/evokes_labs/static/js/453.eac07eb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17e0f073.css",
-    "static/js/main.bde3d1b8.js"
+    "static/css/main.92512f16.css",
+    "static/js/main.eb4d0783.js"
   ]
 }
