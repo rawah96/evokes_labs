@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/evokes_labs/static/css/main.80e4f197.css",
-    "main.js": "/evokes_labs/static/js/main.280bccb1.js",
+    "main.css": "/evokes_labs/static/css/main.d010ec81.css",
+    "main.js": "/evokes_labs/static/js/main.9246fe87.js",
     "static/js/453.eac07eb5.chunk.js": "/evokes_labs/static/js/453.eac07eb5.chunk.js",
     "static/media/puma.jpg": "/evokes_labs/static/media/puma.5a532b3c81743ea1628d.jpg",
     "static/media/Kareem.jpg": "/evokes_labs/static/media/Kareem.22d8d5c710999116b86f.jpg",
@@ -13,12 +13,12 @@
     "static/media/slick.ttf": "/evokes_labs/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/evokes_labs/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/evokes_labs/index.html",
-    "main.80e4f197.css.map": "/evokes_labs/static/css/main.80e4f197.css.map",
-    "main.280bccb1.js.map": "/evokes_labs/static/js/main.280bccb1.js.map",
+    "main.d010ec81.css.map": "/evokes_labs/static/css/main.d010ec81.css.map",
+    "main.9246fe87.js.map": "/evokes_labs/static/js/main.9246fe87.js.map",
     "453.eac07eb5.chunk.js.map": "/evokes_labs/static/js/453.eac07eb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.80e4f197.css",
-    "static/js/main.280bccb1.js"
+    "static/css/main.d010ec81.css",
+    "static/js/main.9246fe87.js"
   ]
 }
