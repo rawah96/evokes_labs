@@ -1,11 +1,24 @@
 {
   "files": {
-    "main.css": "/evokes_labs/static/css/main.d010ec81.css",
-    "main.js": "/evokes_labs/static/js/main.9246fe87.js",
+    "main.css": "/evokes_labs/static/css/main.6537f471.css",
+    "main.js": "/evokes_labs/static/js/main.9e083b74.js",
     "static/js/453.eac07eb5.chunk.js": "/evokes_labs/static/js/453.eac07eb5.chunk.js",
-    "static/media/puma.jpg": "/evokes_labs/static/media/puma.5a532b3c81743ea1628d.jpg",
-    "static/media/Kareem.jpg": "/evokes_labs/static/media/Kareem.22d8d5c710999116b86f.jpg",
-    "static/media/magazine.jpg": "/evokes_labs/static/media/magazine.9f1def7c0059c9e50088.jpg",
+    "static/media/photo1.png": "/evokes_labs/static/media/photo1.9fc6ce4d75d448eb7dcb.png",
+    "static/media/photo15.png": "/evokes_labs/static/media/photo15.1416f7664c11c6119e4a.png",
+    "static/media/photo14.png": "/evokes_labs/static/media/photo14.4c47afeb389562e81c4a.png",
+    "static/media/photo9.png": "/evokes_labs/static/media/photo9.2d4b29278f63d52d9dcd.png",
+    "static/media/photo8.png": "/evokes_labs/static/media/photo8.62739bdb74ca8ab189c1.png",
+    "static/media/photo0.png": "/evokes_labs/static/media/photo0.22dfc6ed050cbf6c97f6.png",
+    "static/media/photo7.png": "/evokes_labs/static/media/photo7.755374de3ac5f6a0755b.png",
+    "static/media/photo3.png": "/evokes_labs/static/media/photo3.759ec861a26242a72169.png",
+    "static/media/photo6.png": "/evokes_labs/static/media/photo6.ba461b77fe7a14f766fd.png",
+    "static/media/photo10.png": "/evokes_labs/static/media/photo10.5daf2cddf6a0c780d496.png",
+    "static/media/photo12.png": "/evokes_labs/static/media/photo12.3e497d545027bed9be39.png",
+    "static/media/photo5.png": "/evokes_labs/static/media/photo5.2e33a9652cff8d8cb2ea.png",
+    "static/media/photo2.png": "/evokes_labs/static/media/photo2.b0636aa9961075d5cc01.png",
+    "static/media/photo4.png": "/evokes_labs/static/media/photo4.a2d9e4a58128e0054a90.png",
+    "static/media/photo11.png": "/evokes_labs/static/media/photo11.a9027f40c0e36773ffea.png",
+    "static/media/kareem.png": "/evokes_labs/static/media/kareem.bbf132a8eac4a83a4555.png",
     "static/media/Ahmed.jpg": "/evokes_labs/static/media/Ahmed.fffbcaa5ecc6445a366c.jpg",
     "static/media/logo.png": "/evokes_labs/static/media/logo.bf9f337c51678df9e969.png",
     "static/media/slick.svg": "/evokes_labs/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -13,12 +26,12 @@
     "static/media/slick.ttf": "/evokes_labs/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/evokes_labs/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/evokes_labs/index.html",
-    "main.d010ec81.css.map": "/evokes_labs/static/css/main.d010ec81.css.map",
-    "main.9246fe87.js.map": "/evokes_labs/static/js/main.9246fe87.js.map",
+    "main.6537f471.css.map": "/evokes_labs/static/css/main.6537f471.css.map",
+    "main.9e083b74.js.map": "/evokes_labs/static/js/main.9e083b74.js.map",
     "453.eac07eb5.chunk.js.map": "/evokes_labs/static/js/453.eac07eb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d010ec81.css",
-    "static/js/main.9246fe87.js"
+    "static/css/main.6537f471.css",
+    "static/js/main.9e083b74.js"
   ]
 }
