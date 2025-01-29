@@ -516,9 +516,7 @@ const handleScrollToSection = (index) => {
         </div>
       </div>
     </div>
-    </div>
-    </div>
-    <section id="contact" className="min-h-screen text-black flex items-center justify-center px-6">
+    <section id="contact" className="mt-48 text-black flex items-center justify-center px-6">
       <div className="max-w-2xl w-full p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -559,6 +557,8 @@ const handleScrollToSection = (index) => {
         </form>
       </div>
     </section>
+    </div>
+    </div>
     <footer className="border-t-2 border-gray-700 text-black py-8">
       <div className="container mx-auto text-center">
         {/* Copyright */}
