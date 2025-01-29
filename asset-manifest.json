@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/evokes_labs/static/css/main.fff3bb00.css",
-    "main.js": "/evokes_labs/static/js/main.d51659ce.js",
+    "main.css": "/evokes_labs/static/css/main.1b2ce2e3.css",
+    "main.js": "/evokes_labs/static/js/main.96794e9f.js",
     "static/js/453.eac07eb5.chunk.js": "/evokes_labs/static/js/453.eac07eb5.chunk.js",
     "static/media/photo1.png": "/evokes_labs/static/media/photo1.9fc6ce4d75d448eb7dcb.png",
     "static/media/photo15.png": "/evokes_labs/static/media/photo15.1416f7664c11c6119e4a.png",
@@ -22,12 +22,12 @@
     "static/media/Ahmed.jpg": "/evokes_labs/static/media/Ahmed.fffbcaa5ecc6445a366c.jpg",
     "static/media/logo.png": "/evokes_labs/static/media/logo.bf9f337c51678df9e969.png",
     "index.html": "/evokes_labs/index.html",
-    "main.fff3bb00.css.map": "/evokes_labs/static/css/main.fff3bb00.css.map",
-    "main.d51659ce.js.map": "/evokes_labs/static/js/main.d51659ce.js.map",
+    "main.1b2ce2e3.css.map": "/evokes_labs/static/css/main.1b2ce2e3.css.map",
+    "main.96794e9f.js.map": "/evokes_labs/static/js/main.96794e9f.js.map",
     "453.eac07eb5.chunk.js.map": "/evokes_labs/static/js/453.eac07eb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fff3bb00.css",
-    "static/js/main.d51659ce.js"
+    "static/css/main.1b2ce2e3.css",
+    "static/js/main.96794e9f.js"
   ]
 }
