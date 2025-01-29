@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c75d0e97.css",
-    "main.js": "/static/js/main.b680fe2b.js",
+    "main.css": "/static/css/main.6306cbf3.css",
+    "main.js": "/static/js/main.b9be1f3d.js",
     "static/js/453.eac07eb5.chunk.js": "/static/js/453.eac07eb5.chunk.js",
     "static/media/photo1.png": "/static/media/photo1.9fc6ce4d75d448eb7dcb.png",
     "static/media/photo15.png": "/static/media/photo15.1416f7664c11c6119e4a.png",
@@ -19,15 +19,18 @@
     "static/media/photo4.png": "/static/media/photo4.a2d9e4a58128e0054a90.png",
     "static/media/photo11.png": "/static/media/photo11.a9027f40c0e36773ffea.png",
     "static/media/kareem.png": "/static/media/kareem.bbf132a8eac4a83a4555.png",
+    "static/media/cham.jpg": "/static/media/cham.73dde7b087f963612022.jpg",
     "static/media/Ahmed.jpg": "/static/media/Ahmed.fffbcaa5ecc6445a366c.jpg",
     "static/media/logo.png": "/static/media/logo.bf9f337c51678df9e969.png",
+    "static/media/puma.png": "/static/media/puma.f95eb0797c15b73056c8.png",
+    "static/media/levelshoes.png": "/static/media/levelshoes.0d727fd84dbd340710e3.png",
     "index.html": "/index.html",
-    "main.c75d0e97.css.map": "/static/css/main.c75d0e97.css.map",
-    "main.b680fe2b.js.map": "/static/js/main.b680fe2b.js.map",
+    "main.6306cbf3.css.map": "/static/css/main.6306cbf3.css.map",
+    "main.b9be1f3d.js.map": "/static/js/main.b9be1f3d.js.map",
     "453.eac07eb5.chunk.js.map": "/static/js/453.eac07eb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c75d0e97.css",
-    "static/js/main.b680fe2b.js"
+    "static/css/main.6306cbf3.css",
+    "static/js/main.b9be1f3d.js"
   ]
 }
