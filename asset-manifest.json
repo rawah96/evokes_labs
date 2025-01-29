@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6306cbf3.css",
-    "main.js": "/static/js/main.b9be1f3d.js",
+    "main.css": "/static/css/main.cb48f411.css",
+    "main.js": "/static/js/main.f1cd098a.js",
     "static/js/453.eac07eb5.chunk.js": "/static/js/453.eac07eb5.chunk.js",
     "static/media/photo1.png": "/static/media/photo1.9fc6ce4d75d448eb7dcb.png",
     "static/media/photo15.png": "/static/media/photo15.1416f7664c11c6119e4a.png",
@@ -19,18 +19,22 @@
     "static/media/photo4.png": "/static/media/photo4.a2d9e4a58128e0054a90.png",
     "static/media/photo11.png": "/static/media/photo11.a9027f40c0e36773ffea.png",
     "static/media/kareem.png": "/static/media/kareem.bbf132a8eac4a83a4555.png",
+    "static/media/saudi.jpg": "/static/media/saudi.bcf06d1ef0db1289c1ce.jpg",
+    "static/media/nike.jpg": "/static/media/nike.cc49a02eadc753399e39.jpg",
     "static/media/cham.jpg": "/static/media/cham.73dde7b087f963612022.jpg",
     "static/media/Ahmed.jpg": "/static/media/Ahmed.fffbcaa5ecc6445a366c.jpg",
+    "static/media/adidas.jpg": "/static/media/adidas.4c8a295e8b226c09124b.jpg",
+    "static/media/astro.jpg": "/static/media/astro.c66b6d364cd7df9666e1.jpg",
     "static/media/logo.png": "/static/media/logo.bf9f337c51678df9e969.png",
     "static/media/puma.png": "/static/media/puma.f95eb0797c15b73056c8.png",
     "static/media/levelshoes.png": "/static/media/levelshoes.0d727fd84dbd340710e3.png",
     "index.html": "/index.html",
-    "main.6306cbf3.css.map": "/static/css/main.6306cbf3.css.map",
-    "main.b9be1f3d.js.map": "/static/js/main.b9be1f3d.js.map",
+    "main.cb48f411.css.map": "/static/css/main.cb48f411.css.map",
+    "main.f1cd098a.js.map": "/static/js/main.f1cd098a.js.map",
     "453.eac07eb5.chunk.js.map": "/static/js/453.eac07eb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6306cbf3.css",
-    "static/js/main.b9be1f3d.js"
+    "static/css/main.cb48f411.css",
+    "static/js/main.f1cd098a.js"
   ]
 }
