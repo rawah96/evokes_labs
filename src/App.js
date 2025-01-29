@@ -552,7 +552,7 @@ const handleScrollToSection = (index) => {
         ))}
       </div>
     </div>
-    <section id="contact" className="mt-16 md:mt-36 text-black flex items-center justify-center px-6 font-agdasima">
+    <section id="contact" className="mt-16 mb-8 md:mt-36 text-black flex items-center justify-center px-6 font-agdasima">
       <div className="max-w-2xl w-full p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
