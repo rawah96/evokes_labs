@@ -3,7 +3,11 @@ module.exports = {
     "./src/**/*.{html,js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        agdasima: ['Agdasima', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

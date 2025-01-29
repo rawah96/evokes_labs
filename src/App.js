@@ -72,78 +72,48 @@ const App = () => {
   const images = [
     {
       src: photo0,
-      title: "title",
-      description: "description",
     },
     {
       src: photo1,
-      title: "title",
-      description: "description",
     },
     {
       src: photo2,
-      title: "title",
-      description: "description",
     },
     {
       src: photo3,
-      title: "title",
-      description: "description",
     },
     {
       src: photo4,
-      title: "title",
-      description: "description",
     },
     {
       src: photo5,
-      title: "title",
-      description: "description",
     },
     {
       src: photo6,
-      title: "title",
-      description: "description",
     },
     {
       src: photo7,
-      title: "title",
-      description: "description",
     },
     {
       src: photo8,
-      title: "title",
-      description: "description",
     },
     {
       src: photo9,
-      title: "title",
-      description: "description",
     },
     {
       src: photo10,
-      title: "title",
-      description: "description",
     },
     {
       src: photo11,
-      title: "title",
-      description: "description",
     },
     {
       src: photo12,
-      title: "title",
-      description: "description",
     },
     {
       src: photo14,
-      title: "title",
-      description: "description",
     },
     {
       src: photo15,
-      title: "title",
-      description: "description",
     },
   ];
 
@@ -186,11 +156,10 @@ const App = () => {
       }, 1000); // Allow time for the transition before resetting
     }
   }, [currIndex]);
-  // 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } },
-    hover: { scale: 1.05, transition: { duration: 0.3, ease: 'easeInOut' } }
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+    hover: { scale: 1.05 }
   };
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -254,7 +223,7 @@ const handleScrollToSection = (index) => {
     setIsMenuOpen(false);
   };
   return (
-    <div>
+    <div style={{ fontFamily: 'Agdasima, sans-serif', fontWeight: 700 }}>
 <nav className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-20 bg-transparent shadow-lg">
   <img
     src={logo}
@@ -357,7 +326,7 @@ const handleScrollToSection = (index) => {
   <div className="mt-8 flex space-x-4 mx-2">
   <a href="/evokeslabpdf.pdf" download="/evokeslabpdf.pdf">
     <motion.button
-      className="px-2 md:px-6 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
+      className="font-agdasima px-2 md:px-6 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
@@ -365,7 +334,7 @@ const handleScrollToSection = (index) => {
     </motion.button>
     </a>
     <motion.button
-      className="px-2 md:px-6 py-3 text-lg font-semibold text-white tracking-widest bg-black border-2 border-black rounded-xl shadow-lg hover:bg-white hover:text-black transition-all duration-300"
+      className="font-agdasima px-2 md:px-6 py-3 text-lg font-semibold text-white tracking-widest bg-black border-2 border-black rounded-xl shadow-lg hover:bg-white hover:text-black transition-all duration-300"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => { handleScrollToSection(3); closeMenu(); }}
@@ -411,51 +380,46 @@ const handleScrollToSection = (index) => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <h3 className="text-3xl sm:text-6xl md:block font-bold text-gray-800">Our Bench Mark Is Excellence</h3>
+                <h3 
+                style={{ fontFamily: 'Agdasima, sans-serif', fontWeight: 700 }}
+                className="text-6xl sm:text-6xl md:block font-bold text-gray-800">Our Bench Mark Is Excellence</h3>
                 <div className="w-full flex justify-center">
                   <p className="mt-4 text-gray-600 w-[500px]">With over ten years of experience in online and offline advertising, our team carries their passion with pride, delivering exceptional results and innovative solutions</p>
                 </div>
               </motion.section>
           </div>
         </div>
-        {/* here # 1 */}
-        <section className="relative text-[#E0E0E0] py-20 px-6 rounded-xl">
-      {/* Elegant Background Animation */}
-      <div className="absolute inset-0  opacity-40 rounded-xl" />
-
-      <motion.h2
-        className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-      >
-        Our Services
-      </motion.h2>
-
-      {/* Service Grid */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-6 md:px-20">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            whileHover="hover"
-            viewport={{ once: false, amount: 0.3 }}
-            className="bg-[#181818] p-6 rounded-2xl shadow-xl flex items-center justify-center text-center text-xl font-semibold cursor-pointer border border-[#333] hover:bg-[#222] transition-all duration-300"
+        <section className="relative py-16 px-6 md:px-12 text-center" >
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold relative z-10 text-black font-agdasima text-4xl"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            {service}
-          </motion.div>
-        ))}
-      </div>
-    </section>
-        {/*  */}
-      
+            Our Services
+          </motion.h2>
+
+          <div className="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-4 md:px-16 font-agdasima text-4xl">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                viewport={{ once: true, amount: 0.2 }}
+                className="bg-[#1a1a1a] p-6 rounded-xl shadow-md flex items-center justify-center text-lg font-medium cursor-pointer hover:bg-[#222] transition-all duration-300"
+              >
+                {service}
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
       {/* Carousel Items */}
       <div id="projects">
           <motion.h2
-            className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10 mb-4"
+            className="text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -512,14 +476,6 @@ const handleScrollToSection = (index) => {
           transition={{ duration: 0.6 }}
         />
 
-        {/* Overlay for Title and Description */}
-        <div className="absolute bottom-4 left-6 right-6 bg-white bg-opacity-80 backdrop-blur-md p-4 rounded-xl shadow-lg">
-          <h3 className="text-xl font-bold text-gray-800">
-            {images[currentIndex].title}
-          </h3>
-          <p className="text-gray-600">{images[currentIndex].description}</p>
-        </div>
-
         {/* Navigation Buttons */}
         <div className="absolute top-1/2 -translate-y-1/2 left-2 right-2 flex justify-between items-center">
           <button
@@ -539,7 +495,7 @@ const handleScrollToSection = (index) => {
     </div>
     <div>
       <motion.h2
-        className="text-4xl font-extrabold text-center text-black tracking-wider relative z-10 mb-4"
+        className="text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: 'easeOut' }}
@@ -569,7 +525,7 @@ const handleScrollToSection = (index) => {
     </div>
     <div>
     < motion.h2
-        className="text-4xl font-extrabold text-center text-black tracking-wider relative z-10 my-4"
+        className="mt-8 text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -596,7 +552,7 @@ const handleScrollToSection = (index) => {
         ))}
       </div>
     </div>
-    <section id="contact" className="mt-16 md:mt-36 text-black flex items-center justify-center px-6">
+    <section id="contact" className="mt-16 md:mt-36 text-black flex items-center justify-center px-6 font-agdasima">
       <div className="max-w-2xl w-full p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
