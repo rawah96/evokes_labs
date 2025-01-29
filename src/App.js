@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import ahmed from "./images/Ahmed.jpg"; // Adjust the path as needed
 import kareem from "./images/kareem.png"; 
 import photo15 from "./images/photo15.png"; 
@@ -19,7 +17,7 @@ import photo3 from "./images/photo3.png";
 import photo2 from "./images/photo2.png"; 
 import photo1 from "./images/photo1.png"; 
 import photo0 from "./images/photo0.png"; 
-
+import emailjs from "@emailjs/browser";
 import logo from "./images/logo.png"; // Adjust the path as needed
 import { FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
@@ -170,17 +168,43 @@ const App = () => {
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
-  
+  const [formData, setFormData] = useState({
+    name: "",
+    message: "",
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [success, setSuccess] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    try {
+      await emailjs.send(
+        "service_e0dhqpr",
+        "template_df1nd38",
+        formData,
+        "zxIq4tNdT8LxkijR4"
+      );
+      setSuccess(true);
+      setFormData({ name: "", message: "" });
+    } catch (error) {
+      setSuccess(false);
+    }
+    setIsSending(false);
+  };
 // Handle scrolling to section
 const handleScrollToSection = (index) => {
-  if (index === 0) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } else if (index === 2) {
-    const section = document.getElementById("projects"); // Scroll to the Projects section
-    section?.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    const section = document.getElementById(paragraphs[index]?.title || 'about-us');
-    section?.scrollIntoView({ behavior: 'smooth' });
+  const sectionIds = ["hero", "about-us", "projects", "contact"];
+  const targetId = sectionIds[index];
+  const section = document.getElementById(targetId);
+
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
   }
 };
 
@@ -204,98 +228,88 @@ const handleScrollToSection = (index) => {
   };
   return (
     <div>
-    <nav className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-20 bg-transparent shadow-lg">
-      <img
-        src={logo}
-        width={140}
-        onClick={() => handleScrollToSection(0)}
-        className="cursor-pointer"
-      />
+<nav className="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-20 bg-transparent shadow-lg">
+  <img
+    src={logo}
+    width={140}
+    onClick={() => handleScrollToSection(0)}
+    className="cursor-pointer"
+  />
 
-      {/* Hamburger Icon for small screens */}
-      <div className="sm:hidden items-center">
-        <button
-          onClick={toggleMenu}
-          className="p-2 rounded-full bg-black text-white focus:outline-none"
-        >
-          {isMenuOpen ? (
-            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
-      </div>
+  {/* Hamburger Icon for small screens */}
+  <div className="sm:hidden items-center">
+    <button
+      onClick={toggleMenu}
+      className="p-2 rounded-full bg-black text-white focus:outline-none"
+    >
+      {isMenuOpen ? (
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      ) : (
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      )}
+    </button>
+  </div>
 
-      {/* Menu items for large screens */}
-      <ul className="hidden sm:flex justify-end w-full items-center">
-        <li className="cursor-pointer px-4 hover:opacity-50" onClick={() => { handleScrollToSection(0); closeMenu(); }}>
-          Home
-        </li>
-        <li className="cursor-pointer px-4 hover:opacity-50" onClick={() => { handleScrollToSection(paragraphs.length); closeMenu(); }}>
-          About
-        </li>
-        <li className="cursor-pointer px-4 hover:opacity-50" onClick={() => { handleScrollToSection(2); closeMenu(); }}>
-          Projects
-        </li>
-        <li className="cursor-pointer hover:opacity-50 border-2 border-black rounded p-2 px-4" onClick={() => { handleScrollToSection(1); closeMenu(); }}>
-          Contact
-        </li>
-      </ul>
+  {/* Menu items for large screens */}
+  <ul className="hidden sm:flex justify-end w-full items-center">
+    <li className="cursor-pointer px-4 hover:opacity-50" onClick={() => handleScrollToSection(0)}>
+      Home
+    </li>
+    <li className="cursor-pointer px-4 hover:opacity-50" onClick={() => handleScrollToSection(1)}>
+      About
+    </li>
+    <li className="cursor-pointer px-4 hover:opacity-50" onClick={() => handleScrollToSection(2)}>
+      Projects
+    </li>
+    <li
+      className="cursor-pointer hover:opacity-50 border-2 border-black rounded p-2 px-4"
+      onClick={() => handleScrollToSection(3)}
+    >
+      Contact
+    </li>
+  </ul>
 
-      {/* Menu items for small screens (hamburger menu) */}
-      <div
-        className={`sm:hidden fixed inset-0 bg-white z-10 flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-      >
-        {/* Overlay that closes the menu when clicked */}
-        <div
-          className={`fixed inset-0 opacity-50 ${isMenuOpen ? 'block' : 'hidden'}`}
-          onClick={closeMenu}
-        ></div>
+  {/* Hamburger Menu for small screens */}
+  <div
+    className={`sm:hidden fixed inset-0 bg-white z-10 flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${
+      isMenuOpen ? "translate-x-0" : "translate-x-full"
+    }`}
+  >
+    <ul className="flex flex-col items-center">
+      <li className="cursor-pointer py-4 text-xl hover:opacity-50" onClick={() => { handleScrollToSection(0); closeMenu(); }}>
+        Home
+      </li>
+      <li className="cursor-pointer py-4 text-xl hover:opacity-50" onClick={() => { handleScrollToSection(1); closeMenu(); }}>
+        About
+      </li>
+      <li className="cursor-pointer py-4 text-xl hover:opacity-50" onClick={() => { handleScrollToSection(2); closeMenu(); }}>
+        Projects
+      </li>
+      <li className="cursor-pointer py-4 text-xl hover:opacity-50 border-2 border-black rounded p-2 px-4" onClick={() => { handleScrollToSection(3); closeMenu(); }}>
+        Contact
+      </li>
+    </ul>
+  </div>
+</nav>
 
-        <ul className="flex flex-col items-center">
-          <li className="cursor-pointer py-4 text-xl hover:opacity-50" onClick={() => { handleScrollToSection(0); closeMenu(); }}>
-            Home
-          </li>
-          <li className="cursor-pointer py-4 text-xl hover:opacity-50" onClick={() => { handleScrollToSection(paragraphs.length); closeMenu(); }}>
-            About
-          </li>
-          <li className="cursor-pointer py-4 text-xl hover:opacity-50" onClick={() => { handleScrollToSection(2); closeMenu(); }}>
-            Projects
-          </li>
-          <li className="cursor-pointer py-4 text-xl hover:opacity-50 border-2 border-black rounded p-2 px-4" onClick={() => { handleScrollToSection(1); closeMenu(); }}>
-            Contact
-          </li>
-        </ul>
-        
-        {/* Close "X" button */}
-        <button
-          onClick={closeMenu}
-          className="absolute top-4 right-4 text-3xl text-black"
-        >
-          &times;
-        </button>
-      </div>
-    </nav>
 
-    <div className="font-sans bg-white text-black px-8 mt-32">
+    <div className="font-sans bg-white text-black px-8 mt-32" id="hero">
       {/* Hero Section with Letter-by-Letter Typing Effect */}
       <section className="relative lg:h-[80vh] flex items-center justify-center bg-white shadow-lg rounded-3xl sm: h-[65vh]">
   {/* Background Spline Viewer */}
@@ -504,6 +518,47 @@ const handleScrollToSection = (index) => {
     </div>
     </div>
     </div>
+    <section id="contact" className="min-h-screen text-black flex items-center justify-center px-6">
+      <div className="max-w-2xl w-full p-8 rounded-2xl shadow-lg">
+        <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label className="block text-gray-400">Your Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-white outline-none"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-400">Message</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows="4"
+              className="w-full p-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-white outline-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            disabled={isSending}
+            className="w-full py-3 bg-black text-white rounded-lg font-bold text-lg hover:bg-gray-300 transition-all"
+          >
+            {isSending ? "Sending..." : "Send Message"}
+          </button>
+          {success !== null && (
+            <p className={`text-center mt-4 ${success ? "text-green-400" : "text-red-400"}`}>
+              {success ? "Thank you, we received your message!" : "Failed to send message. Try again."}
+            </p>
+          )}
+        </form>
+      </div>
+    </section>
     <footer className="border-t-2 border-gray-700 text-black py-8">
       <div className="container mx-auto text-center">
         {/* Copyright */}
