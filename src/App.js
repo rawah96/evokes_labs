@@ -313,7 +313,7 @@ const handleScrollToSection = (index) => {
       {/* Hero Section with Letter-by-Letter Typing Effect */}
       <section className="relative lg:h-[80vh] flex items-center justify-center bg-white shadow-lg rounded-3xl sm: h-[65vh]">
   {/* Background Spline Viewer */}
-  <div className="absolute top-0 left-0 w-full hidden lg:block">
+    <div className="absolute top-0 left-0 w-full hidden lg:block">
     <spline-viewer
       url="https://prod.spline.design/XcoapkWpIZBq4Cqb/scene.splinecode"
     ></spline-viewer>
@@ -516,7 +516,7 @@ const handleScrollToSection = (index) => {
         </div>
       </div>
     </div>
-    <section id="contact" className="mt-48 text-black flex items-center justify-center px-6">
+    <section id="contact" className="mt-16 md:mt-36 text-black flex items-center justify-center px-6">
       <div className="max-w-2xl w-full p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
