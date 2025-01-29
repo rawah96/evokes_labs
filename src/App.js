@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ahmed from "./images/Ahmed.jpg"; // Adjust the path as needed
 import kareem from "./images/kareem.png"; 
@@ -17,34 +17,19 @@ import photo3 from "./images/photo3.png";
 import photo2 from "./images/photo2.png"; 
 import photo1 from "./images/photo1.png"; 
 import photo0 from "./images/photo0.png"; 
+import levelshoes from "./images/levelshoes.png"; 
+import puma from "./images/puma.png"; 
 import emailjs from "@emailjs/browser";
 import logo from "./images/logo.png"; // Adjust the path as needed
+import cham from "./images/cham.jpg"; // Adjust the path as needed
 import { FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 const App = () => {
-  const paragraphsRef = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
     const middleIndex = Math.floor(projects.length / 2);
     setActiveIndex(middleIndex);
   }, []);
-  const [paragraphs, setParagraphs] = useState([
-    { 
-      title: 'Creative Marketing Agency', 
-      text: `We're a creative marketing agency that pushes boundaries to elevate brands. With data-driven strategies, bold visuals, and engaging content, we craft memorable experiences that connect and convert. Let’s turn your vision into a powerful story.`,
-      readMore: false 
-    },
-    { 
-      title: 'Our Bench Mark Is Excellence', 
-      text: 'With over ten years of experience in online and offline advertising, our team carries their passion with pride, delivering exceptional results and innovative solutions', 
-      readMore: false 
-    },
-    { 
-      title: 'Comprehensive Solutions', 
-      text: 'At our Saudi-based agency, we specialize in website design and development, 3D animations, and powerful marketing strategies. Our diverse range of services is thoughtfully packaged to deliver the highest quality and exceptional value, ensuring your brand stands out in today’s digital landscape. Let’s create something extraordinary together!', 
-      readMore: false 
-    }
-  ]);
 
   const projects = [
     {
@@ -157,8 +142,48 @@ const App = () => {
       description: "description",
     },
   ];
-  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const services = [
+    "UX/UI", "Web Development", "3D Animation", "Motion Graphics",
+    "Creative Design & Branding", "Content Creation", "Video/Photo Production",
+    "PR & Events", "Influencer Marketing", "Media Buying"
+  ];
+  const brands = [
+    { name: "Brand 1", logo: levelshoes },
+    { name: "Brand 2", logo: puma },
+    { name: "Brand 3", logo: cham },
+    // Add more brands as needed
+  ];
+  const [currIndex, setCurrIndex] = useState(0);
+  const [carouselItems, setCarouselItems] = useState(brands);
+
+  useEffect(() => {
+    // Clone the array to create infinite looping effect
+    setCarouselItems([...brands, ...brands]);
+
+    const interval = setInterval(() => {
+      // Move the index forward and loop back to the start
+      setCurrIndex((prevIndex) => (prevIndex + 1) % brands.length);
+    }, 2000); // Change image every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (currIndex === brands.length) {
+      // Reset to the first item when reaching the end of the duplicated array
+      setTimeout(() => {
+        setCurrIndex(0);
+      }, 1000); // Allow time for the transition before resetting
+    }
+  }, [currIndex]);
+  // 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+    hover: { scale: 1.05, transition: { duration: 0.3, ease: 'easeInOut' } }
+  };
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -210,12 +235,6 @@ const handleScrollToSection = (index) => {
 
   const handleCardClick = (clickedIndex) => {
     setActiveIndex(clickedIndex); // Directly set the activeIndex to clicked card's index
-  };
-
-  const toggleReadMore = (index) => {
-    const updatedParagraphs = [...paragraphs];
-    updatedParagraphs[index].readMore = !updatedParagraphs[index].readMore;
-    setParagraphs(updatedParagraphs);
   };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -309,54 +328,44 @@ const handleScrollToSection = (index) => {
 </nav>
 
 
-    <div className="font-sans bg-white text-black px-8 mt-32" id="hero">
+    <div className="font-sans bg-white text-black px-8" id="hero">
       {/* Hero Section with Letter-by-Letter Typing Effect */}
-      <section className="relative lg:h-[80vh] flex items-center justify-center bg-white shadow-lg rounded-3xl sm: h-[65vh]">
+      <section className="relative lg:h-[80vh] flex items-center justify-center sm: h-[65vh] rounded-3xl">
   {/* Background Spline Viewer */}
-    <div className="absolute top-0 left-0 w-full hidden lg:block">
+  
+    <div className="absolute top-0 left-0 w-full hidden lg:block bg-white shadow-lg rounded-3xl">
     <spline-viewer
-      url="https://prod.spline.design/XcoapkWpIZBq4Cqb/scene.splinecode"
+      url="https://prod.spline.design/SWRErhsgaq7JwJ8t/scene.splinecode"
     ></spline-viewer>
   </div>
   <div className="absolute top-0 left-0 w-full lg:hidden mt-32">
     <spline-viewer
-      url="https://prod.spline.design/jRNtC8JRqZSfE6O3/scene.splinecode"
+      url="https://prod.spline.design/tHrd9NOIxW3b3J0q/scene.splinecode"
     ></spline-viewer>
   </div>
 
   {/* Content */}
-  <div className="relative text-center z-10 mt-36">
-    <div className="mt-8 flex justify-center space-x-4">
-      <motion.button
-        className="px-2 md:px-6 py-3 text-lg font-semibold  text-lg tracking-widest text-black border-2 border-black bg-white rounded-lg shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
-        whileHover={{ scale: 1.1}}
-        whileTap={{ scale: 0.95 }}
-      >
-        Learn More
-      </motion.button>
-      <motion.button
-        className="px-2 md:px-6 py-3 text-lg font-semibold text-white  text-lg tracking-widest bg-black border-2 border-black rounded-lg shadow-lg hover:bg-white hover:text-black transition-all duration-300"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        Reach out!
-      </motion.button>
-    </div>
-  </div>
-
-  {/* Scroll Down Button */}
-  <div className="absolute bottom-4 left-5 z-10">
+  <div className="relative z-10 mt-36 w-full flex sm:justify-start md:justify-end">
+  <div className="mt-8 flex space-x-4 mx-2">
     <motion.button
-      className="w-16 h-16 bg-white border-2 border-black rounded-full shadow-lg flex items-center justify-center text-black text-2xl"
+      className="px-2 md:px-6 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+      onClick={() => handleScrollToSection(1)}
     >
-      ↓
+      Learn More
+    </motion.button>
+    <motion.button
+      className="px-2 md:px-6 py-3 text-lg font-semibold text-white tracking-widest bg-black border-2 border-black rounded-xl shadow-lg hover:bg-white hover:text-black transition-all duration-300"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => { handleScrollToSection(3); closeMenu(); }}
+    >
+      Reach out!
     </motion.button>
   </div>
+</div>
 
-  {/* Styles */}
   <style jsx>{`
     .spline-viewer {
       width: 100%;
@@ -383,64 +392,67 @@ const handleScrollToSection = (index) => {
     }
   `}</style>
 </section>
-{/* Paragraphs Section - Same Row */}
         <div className=" mt-16" id="about-us">
-          <div className="text-center">
-            <motion.h2 className="text-3xl text-lg tracking-widest">About Us</motion.h2>
-          </div>
-          <div className="mt-8 flex justify-center">
-            {paragraphs.map((para, index) => (
+          <div className="flex justify-center">
               <motion.section
-                key={index}
-                id={`about-us-${index}`} key={index}
-                ref={(el) => (paragraphsRef.current[index] = el)}
+                id="about-us"
                 className="text-center w-full" // Fixed width for paragraphs
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                {/* "text-2xl sm:text-3xl font-bold text-gray-800" */}
-                <h3 className="text-sm line-clamp-2 sm:text-3xl md:block font-bold text-gray-800">{para.title}</h3>
-                <p className={`mt-4 text-gray-600 ${para.readMore ? 'block' : 'line-clamp-3'}`}>{para.text}</p>
-                {/* Read More Button */}
-                <button onClick={() => toggleReadMore(index)} className="text-gray-600 mt-4">
-                  {
-                    para.text.length > 170 ?
-                    (para.readMore ? 'Show Less' : 'Read More' ) : null}
-                </button>
+                <h3 className="text-sm sm:text-6xl md:block font-bold text-gray-800">Our Bench Mark Is Excellence</h3>
+                <div className="w-full flex justify-center">
+                  <p className="mt-4 text-gray-600 w-[500px]">With over ten years of experience in online and offline advertising, our team carries their passion with pride, delivering exceptional results and innovative solutions</p>
+                </div>
               </motion.section>
-            ))}
           </div>
         </div>
-<div >
-      <h2 className="text-center text-white text-4xl font-bold">Meet the Co-Founders</h2>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        {cofounders.map((cofounder, index) => (
+        {/* here # 1 */}
+        <section className="relative text-[#E0E0E0] py-20 px-6 rounded-xl">
+      {/* Elegant Background Animation */}
+      <div className="absolute inset-0  opacity-40 rounded-xl" />
+
+      <motion.h2
+        className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        Our Services
+      </motion.h2>
+
+      {/* Service Grid */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-6 md:px-20">
+        {services.map((service, index) => (
           <motion.div
             key={index}
-            className="flex items-center bg-white shadow-lg rounded-2xl overflow-hidden"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            whileHover="hover"
+            viewport={{ once: false, amount: 0.3 }}
+            className="bg-[#181818] p-6 rounded-2xl shadow-xl flex items-center justify-center text-center text-xl font-semibold cursor-pointer border border-[#333] hover:bg-[#222] transition-all duration-300"
           >
-            <motion.img
-              src={cofounder.photo}
-              alt={cofounder.name}
-              className="w-36 h-48 md:w-64 md:h-96 object-cover rounded-full m-4"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800">{cofounder.name}</h3>
-              <p className="text-sm text-gray-500 mb-2">{cofounder.role}</p>
-              <p className="text-gray-700">{cofounder.timeline}</p>
-            </div>
+            {service}
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
+        {/*  */}
+      
 
       {/* Carousel Items */}
-      <div className="py-20 mt-8 md:mt-48" id="projects">
-          <div className="text-center mb-8">
-            <motion.h2 className="text-3xl text-lg tracking-widest">Projects</motion.h2>
-          </div>
+      <div id="projects">
+          <motion.h2
+            className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10 mb-4"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            Projects
+          </motion.h2>
       {/* Carousel Items */}
       <div className="flex space-x-4 overflow-hidden w-full justify-center">
         {projects.map((project, index) => (
@@ -514,6 +526,66 @@ const handleScrollToSection = (index) => {
             &#10095;
           </button>
         </div>
+      </div>
+    </div>
+    <div>
+      <motion.h2
+        className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, ease: 'easeOut' }}
+      >
+        Clients
+      </motion.h2>
+      <div className="relative overflow-hidden">
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{
+          transform: `translateX(-${(currIndex / brands.length) * 100}%)`,
+        }}
+      >
+        {carouselItems.map((brand, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-40 mx-4 flex items-center justify-center"
+          >
+            <img
+              src={brand.logo}
+              alt={brand.name}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+    </div>
+    <div>
+    < motion.h2
+        className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        Meet the Heads
+      </motion.h2>
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {cofounders.map((cofounder, index) => (
+          <motion.div
+            key={index}
+            className="flex items-center bg-white shadow-lg rounded-2xl overflow-hidden"
+          >
+            <motion.img
+              src={cofounder.photo}
+              alt={cofounder.name}
+              className="w-36 h-48 md:w-64 md:h-96 object-cover rounded-full m-4"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-gray-800">{cofounder.name}</h3>
+              <p className="text-sm text-gray-500 mb-2">{cofounder.role}</p>
+              <p className="text-gray-700">{cofounder.timeline}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
     <section id="contact" className="mt-16 md:mt-36 text-black flex items-center justify-center px-6">
