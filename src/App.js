@@ -17,6 +17,10 @@ import photo3 from "./images/photo3.png";
 import photo2 from "./images/photo2.png"; 
 import photo1 from "./images/photo1.png"; 
 import photo0 from "./images/photo0.png"; 
+import adidas from "./images/adidas.jpg"; 
+import astro from "./images/astro.jpg"; 
+import saudi from "./images/saudi.jpg"; 
+import nike from "./images/nike.jpg"; 
 import levelshoes from "./images/levelshoes.png"; 
 import puma from "./images/puma.png"; 
 import emailjs from "@emailjs/browser";
@@ -150,9 +154,13 @@ const App = () => {
     "PR & Events", "Influencer Marketing", "Media Buying"
   ];
   const brands = [
-    { name: "Brand 1", logo: levelshoes },
-    { name: "Brand 2", logo: puma },
-    { name: "Brand 3", logo: cham },
+    { logo: levelshoes },
+    { logo: puma },
+    { logo: cham },
+    { logo: nike },
+    { logo: adidas },
+    { logo: astro },
+    { logo: saudi },
     // Add more brands as needed
   ];
   const [currIndex, setCurrIndex] = useState(0);
@@ -347,14 +355,15 @@ const handleScrollToSection = (index) => {
   {/* Content */}
   <div className="relative z-10 mt-36 w-full flex sm:justify-start md:justify-end">
   <div className="mt-8 flex space-x-4 mx-2">
+  <a href="/evokeslabpdf.pdf" download="/evokeslabpdf.pdf">
     <motion.button
       className="px-2 md:px-6 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      onClick={() => handleScrollToSection(1)}
     >
       Learn More
     </motion.button>
+    </a>
     <motion.button
       className="px-2 md:px-6 py-3 text-lg font-semibold text-white tracking-widest bg-black border-2 border-black rounded-xl shadow-lg hover:bg-white hover:text-black transition-all duration-300"
       whileHover={{ scale: 1.1 }}
@@ -392,7 +401,7 @@ const handleScrollToSection = (index) => {
     }
   `}</style>
 </section>
-        <div className=" mt-16" id="about-us">
+        <div className="md:mt-32" id="about-us">
           <div className="flex justify-center">
               <motion.section
                 id="about-us"
@@ -402,7 +411,7 @@ const handleScrollToSection = (index) => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <h3 className="text-sm sm:text-6xl md:block font-bold text-gray-800">Our Bench Mark Is Excellence</h3>
+                <h3 className="text-3xl sm:text-6xl md:block font-bold text-gray-800">Our Bench Mark Is Excellence</h3>
                 <div className="w-full flex justify-center">
                   <p className="mt-4 text-gray-600 w-[500px]">With over ten years of experience in online and offline advertising, our team carries their passion with pride, delivering exceptional results and innovative solutions</p>
                 </div>
@@ -530,7 +539,7 @@ const handleScrollToSection = (index) => {
     </div>
     <div>
       <motion.h2
-        className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10"
+        className="text-4xl font-extrabold text-center text-black tracking-wider relative z-10 mb-4"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: 'easeOut' }}
@@ -551,7 +560,6 @@ const handleScrollToSection = (index) => {
           >
             <img
               src={brand.logo}
-              alt={brand.name}
               className="w-full h-auto object-contain"
             />
           </div>
@@ -561,12 +569,12 @@ const handleScrollToSection = (index) => {
     </div>
     <div>
     < motion.h2
-        className="text-6xl font-extrabold text-center text-black tracking-wider relative z-10"
+        className="text-4xl font-extrabold text-center text-black tracking-wider relative z-10 my-4"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        Meet the Heads
+        Our Team
       </motion.h2>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {cofounders.map((cofounder, index) => (
