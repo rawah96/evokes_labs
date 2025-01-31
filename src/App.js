@@ -646,7 +646,7 @@ const handleScrollToSection = (index) => {
         </div>
 
         {/* Optional Text */}
-        <p className="text-sm mt-6 text-gray-400">Designed with ❤️ by <span className="font-semibold text-black">Rawah</span></p>
+        <p className="text-sm mt-6 text-gray-400">Designed and Developed with ❤️ by <span className="font-semibold text-black">Evokes Lab</span></p>
       </div>
     </footer>
     </div>
