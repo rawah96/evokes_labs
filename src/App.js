@@ -135,7 +135,7 @@ const App = () => {
   ];
   const [currIndex, setCurrIndex] = useState(0);
   const [carouselItems, setCarouselItems] = useState(brands);
-
+  const [showPDF, setShowPDF] = useState(false);
   useEffect(() => {
     // Clone the array to create infinite looping effect
     setCarouselItems([...brands, ...brands]);
@@ -324,23 +324,47 @@ const handleScrollToSection = (index) => {
   {/* Content */}
   <div className="relative z-10 mt-36 w-full flex sm:justify-start md:justify-end">
   <div className="mt-8 flex space-x-4 mx-2">
-  <a href="/evokeslabpdf.pdf" download="/evokeslabpdf.pdf">
-    <motion.button
-      className="font-agdasima px-2 md:px-6 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      Learn More
-    </motion.button>
-    </a>
-    <motion.button
-      className="font-agdasima px-2 md:px-6 py-3 text-lg font-semibold text-white tracking-widest bg-black border-2 border-black rounded-xl shadow-lg hover:bg-white hover:text-black transition-all duration-300"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => { handleScrollToSection(3); closeMenu(); }}
-    >
-      Reach out!
-    </motion.button>
+  <div className="flex flex-col items-center justify-center min-h-screen">
+      {/* Button to Open PDF */}
+      <motion.button
+        onClick={() => setShowPDF(true)}
+        className="font-agdasima px-8 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Learn More
+      </motion.button>
+
+      {/* PDF Modal */}
+      {showPDF && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+          onClick={() => setShowPDF(false)} // Closes when clicking outside
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="relative bg-white rounded-xl shadow-xl p-4 max-w-4xl w-full h-[80vh]"
+            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside modal
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPDF(false)}
+              className="absolute top-2 right-2 text-black text-2xl font-bold hover:text-red-500"
+            >
+              &times;
+            </button>
+
+            {/* Embedded PDF */}
+            <iframe
+              src="/evokeslabpdf.pdf"
+              className="w-full h-full border-0 rounded-lg"
+            ></iframe>
+          </motion.div>
+        </div>
+      )}
+    </div>
   </div>
 </div>
 
@@ -427,15 +451,11 @@ const handleScrollToSection = (index) => {
             Projects
           </motion.h2>
       {/* Carousel Items */}
-      <div className="flex space-x-4 overflow-hidden w-full justify-center">
+      <div className="flex flex-wrap w-full justify-center">
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`relative w-80 rounded-5xl cursor-pointer sm:w-96 md:w-1/3 lg:w-1/4 h-36 md:h-96 rounded-xl bg-black backdrop-blur-lg transition-all duration-500 transform ${
-              index === activeIndex
-                ? "scale-100 z-10 " // Active card centered and larger
-                : "scale-90 blur-md" // Neighbors blurred
-            }`}
+            className={`m-2 relative rounded-5xl cursor-pointer w-96 h-96 md:w-1/4 rounded-xl bg-black  transition-all duration-500 transform `}
             onClick={() => handleCardClick(index)}
             style={{ transition: "transform 0.5s ease-out rounded-3xl" }}
           >
