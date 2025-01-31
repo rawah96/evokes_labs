@@ -516,9 +516,11 @@ const handleScrollToSection = (index) => {
         </div>
       </div>
     </div>
-    <div>
+
+{/* clients */}
+<div>
       <motion.h2
-        className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
+        className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: 'easeOut' }}
@@ -526,25 +528,37 @@ const handleScrollToSection = (index) => {
         Clients
       </motion.h2>
       <div className="relative overflow-hidden">
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{
-          transform: `translateX(-${(currIndex / brands.length) * 100}%)`,
-        }}
-      >
-        {carouselItems.map((brand, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-40 mx-4 flex items-center justify-center"
-          >
-            <img
-              src={brand.logo}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        ))}
+        <div
+          className="flex animate-scroll"
+          style={{ display: 'flex' }}
+        >
+          {/* Render the items twice to create the infinite loop effect */}
+          {carouselItems.map((brand, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-40 mx-4 flex items-center justify-center"
+            >
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          ))}
+          {carouselItems.map((brand, index) => (
+            <div
+              key={index + carouselItems.length}
+              className="flex-shrink-0 w-40 mx-4 flex items-center justify-center"
+            >
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
     <div>
     < motion.h2
