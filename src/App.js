@@ -37,18 +37,12 @@ const App = () => {
 
   const projects = [
     {
-      title: 'PUMA',
-      description: 'Description for project.',
       imageUrl: 'puma',
     },
     {
-      title: '3D Animations',
-      description: 'Description for project.',
       imageUrl: 'final_compressed.mp4',
     },
     {
-      title: 'bottle',
-      description: 'Description for project.',
       imageUrl: 'bottle',
       
     },
@@ -475,11 +469,6 @@ const handleScrollToSection = (index) => {
               Your browser does not support the video tag.
             </video>
             }
-            <div className="absolute bottom-4 left-4 text-white space-y-2">
-            <h3 className="text-sm md:text-lg font-semibold">{project.title}</h3>
-            <p className="text-sm">{project.description}</p>
-            <button onClick={() => alert('should redirect to the respective page')}>Learn More</button>
-          </div>
           </div>
         ))}
       </div>
