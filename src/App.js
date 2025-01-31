@@ -59,13 +59,11 @@ const App = () => {
     name: "Ahmed Alsenan",
     role: "CEO & Founder",
     photo: ahmed,
-    timeline: "Founded the agency in 2025 with a vision to create innovative web experiences. -- complete timeline"
   },
   {
     name: "Abdulkareem alsenan",
     role: "Co-Founder",
     photo: kareem,
-    timeline: "Add timeline."
   },
 ];
 
@@ -416,7 +414,7 @@ const handleScrollToSection = (index) => {
               </motion.section>
           </div>
         </div>
-        <section className="relative py-16 px-6 md:px-12 text-center" >
+        <section className="relative py-8 px-6 md:px-12 text-center" >
           <motion.h2
             className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black font-agdasima text-4xl"
             initial={{ opacity: 0, y: -30 }}
@@ -426,7 +424,7 @@ const handleScrollToSection = (index) => {
             Our Services
           </motion.h2>
 
-          <div className="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-4 md:px-16 font-agdasima text-4xl">
+          <div className="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 px-4 md:px-16 font-agdasima text-4xl">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -520,7 +518,7 @@ const handleScrollToSection = (index) => {
 {/* clients */}
 <div>
       <motion.h2
-        className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima mb-8"
+        className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: 'easeOut' }}
@@ -562,34 +560,33 @@ const handleScrollToSection = (index) => {
     </div>
     <div>
     < motion.h2
-        className="tracking-wide mt-8 text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
+        className="tracking-wide my-8 text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
         Our Team
       </motion.h2>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        {cofounders.map((cofounder, index) => (
-          <motion.div
-            key={index}
-            className="flex items-center bg-white shadow-lg rounded-2xl overflow-hidden"
-          >
-            <motion.img
-              src={cofounder.photo}
-              alt={cofounder.name}
-              className="w-36 h-48 md:w-64 md:h-96 object-cover rounded-full m-4"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800">{cofounder.name}</h3>
-              <p className="text-sm text-gray-500 mb-2">{cofounder.role}</p>
-              <p className="text-gray-700">{cofounder.timeline}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-center">
+  {/* Cofounder Images with Name and Description */}
+  {cofounders.map((cofounder, index) => (
+    <motion.div
+      key={index}
+      className="flex flex-col items-center mx-2"
+    >
+      <motion.img
+        src={cofounder.photo}
+        alt={cofounder.name}
+        className="w-64 md:h-96 object-cover rounded-lg mb-4"
+      />
+      <h3 className="text-xl font-bold text-gray-800 mb-2">{cofounder.name}</h3>
+      <p className="text-sm text-gray-500 mb-2">{cofounder.role}</p>
+      <p className="text-gray-700">{cofounder.timeline}</p>
+    </motion.div>
+  ))}
+</div>
     </div>
-    <section id="contact" className="mt-16 mb-8 md:mt-36 text-black flex items-center justify-center px-6 font-agdasima">
+    <section id="contact" className="my-8 text-black flex items-center justify-center px-6 font-agdasima">
       <div className="max-w-2xl w-full p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
