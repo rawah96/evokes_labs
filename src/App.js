@@ -322,31 +322,32 @@ const handleScrollToSection = (index) => {
   </div>
 
   {/* Content */}
-  <div className="relative z-10 mt-36 w-full flex sm:justify-start md:justify-end">
-  <div className="mt-8 flex space-x-4 mx-2">
+  <div className="relative z-10 w-full flex sm:justify-start md:justify-end">
+  <div className="flex mx-2">
   <div className="flex flex-col items-center justify-center min-h-screen">
       {/* Button to Open PDF */}
       <motion.button
-        onClick={() => setShowPDF(true)}
-        className="font-agdasima px-8 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        Learn More
-      </motion.button>
+  onClick={() => setShowPDF(true)}
+  className="absolute left-1/2 bottom-1/4 transform -translate-x-1/2 px-6 py-3 text-lg font-semibold tracking-widest text-black border-2 border-black bg-white rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-500 transition-all duration-300"
+  // whileHover={{ scale: 1.1 }}
+  // whileTap={{ scale: 0.95 }}
+>
+  Learn More
+</motion.button>
+
 
       {/* PDF Modal */}
       {showPDF && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-          onClick={() => setShowPDF(false)} // Closes when clicking outside
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 px-4"
+          onClick={() => setShowPDF(false)}
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="relative bg-white rounded-xl shadow-xl p-4 max-w-4xl w-full h-[80vh]"
-            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside modal
+            className="relative bg-white rounded-xl shadow-xl p-4 w-full max-w-4xl h-[80vh] sm:h-[90vh] flex flex-col sm:max-w-full sm:h-full"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
@@ -356,11 +357,13 @@ const handleScrollToSection = (index) => {
               &times;
             </button>
 
-            {/* Embedded PDF */}
-            <iframe
-              src="/evokeslabpdf.pdf"
-              className="w-full h-full border-0 rounded-lg"
-            ></iframe>
+            {/* PDF Embed (Works on All Screens Now) */}
+            <div className="w-full h-full">
+              <iframe
+                src="/evokeslabpdf.pdf"
+                className="w-full h-full border-0 rounded-lg"
+              ></iframe>
+            </div>
           </motion.div>
         </div>
       )}
@@ -415,7 +418,7 @@ const handleScrollToSection = (index) => {
         </div>
         <section className="relative py-16 px-6 md:px-12 text-center" >
           <motion.h2
-            className="text-4xl md:text-5xl font-bold relative z-10 text-black font-agdasima text-4xl"
+            className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black font-agdasima text-4xl"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -443,7 +446,7 @@ const handleScrollToSection = (index) => {
       {/* Carousel Items */}
       <div id="projects">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
+            className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -515,7 +518,7 @@ const handleScrollToSection = (index) => {
     </div>
     <div>
       <motion.h2
-        className="text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
+        className="tracking-wide text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: 'easeOut' }}
@@ -545,7 +548,7 @@ const handleScrollToSection = (index) => {
     </div>
     <div>
     < motion.h2
-        className="mt-8 text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
+        className="tracking-wide mt-8 text-4xl md:text-5xl font-bold relative z-10 text-black text-center font-agdasima text-4xl mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
